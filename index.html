@@ -65,6 +65,14 @@
             background-color: #0284c7; /* Darker Sky Blue */
         }
         
+        /* Language Switcher Styles */
+        .lang-switcher button { transition: all 0.3s ease; }
+        .lang-switcher .active-lang { 
+            background-color: #2563EB; /* Blue */
+            color: #FFFFFF; /* White */
+            font-weight: 600; 
+        }
+
         /* QR Code Modal Styles */
         #qr-modal {
             position: fixed; top: 0; left: 0; width: 100%; height: 100%;
@@ -111,23 +119,32 @@
                 <a href="#home" class="text-3xl accent-color font-heading font-bold">Kalikata Venkat</a>
                 
                 <div class="hidden md:flex items-center space-x-6">
-                    <a href="#home" class="text-gray-700 hover:text-blue-600 transition-colors">Home</a>
-                    <a href="#services" class="text-gray-700 hover:text-blue-600 transition-colors">Services</a>
-                    <a href="#about" class="text-gray-700 hover:text-blue-600 transition-colors">About Me</a>
+                    <a href="#home" class="text-gray-700 hover:text-blue-600 transition-colors" data-lang-en="Home" data-lang-te="హోమ్">Home</a>
+                    <a href="#services" class="text-gray-700 hover:text-blue-600 transition-colors" data-lang-en="Services" data-lang-te="సేవలు">Services</a>
+                    <a href="#about" class="text-gray-700 hover:text-blue-600 transition-colors" data-lang-en="About Me" data-lang-te="నా గురించి">About Me</a>
                 </div>
 
-                <div class="md:hidden">
-                    <button id="mobile-menu-button" class="text-gray-700 hover:text-blue-600 focus:outline-none" aria-label="Open menu">
-                        <i class="fas fa-bars text-2xl"></i>
-                    </button>
+                <div class="flex items-center space-x-4">
+                    <!-- Language Switcher -->
+                    <div class="lang-switcher text-gray-600 text-sm font-medium flex items-center bg-gray-100 rounded-full p-1">
+                        <button id="lang-en" class="px-3 py-1 rounded-full">EN</button>
+                        <button id="lang-te" class="px-3 py-1 rounded-full">తె</button>
+                    </div>
+
+                    <!-- Mobile Menu Button -->
+                    <div class="md:hidden">
+                        <button id="mobile-menu-button" class="text-gray-700 hover:text-blue-600 focus:outline-none" aria-label="Open menu">
+                            <i class="fas fa-bars text-2xl"></i>
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
         <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg">
-            <a href="#home" class="block py-3 px-6 text-sm text-gray-700 hover:bg-gray-100">Home</a>
-            <a href="#services" class="block py-3 px-6 text-sm text-gray-700 hover:bg-gray-100">Services</a>
-            <a href="#about" class="block py-3 px-6 text-sm text-gray-700 hover:bg-gray-100">About Me</a>
+            <a href="#home" class="block py-3 px-6 text-sm text-gray-700 hover:bg-gray-100" data-lang-en="Home" data-lang-te="హోమ్">Home</a>
+            <a href="#services" class="block py-3 px-6 text-sm text-gray-700 hover:bg-gray-100" data-lang-en="Services" data-lang-te="సేవలు">Services</a>
+            <a href="#about" class="block py-3 px-6 text-sm text-gray-700 hover:bg-gray-100" data-lang-en="About Me" data-lang-te="నా గురించి">About Me</a>
         </div>
     </nav>
 
@@ -139,15 +156,15 @@
             <div class="w-full max-w-4xl mx-auto p-6 md:p-12">
                 <div class="mb-6">
                     <!-- Placeholder for profile picture. User should replace 'mk logo black.png' -->
-                    <img src="logo.jpg" alt="Kalikata Venkat - Plumber" class="mx-auto h-32 w-32 md:h-40 md:w-40 rounded-full object-cover border-4 border-blue-500 shadow-lg">
+                    <img src="https://placehold.co/160x160/E0E7FF/3B82F6?text=KV" alt="Kalikata Venkat - Plumber" class="mx-auto h-32 w-32 md:h-40 md:w-40 rounded-full object-cover border-4 border-blue-500 shadow-lg">
                 </div>
                 
                 <!-- Main Heading (H1) - Made responsive -->
-                <h1 class="text-4xl sm:text-5xl md:text-6xl text-gray-900 mb-4 font-heading font-bold">
+                <h1 class="text-4xl sm:text-5xl md:text-6xl text-gray-900 mb-4 font-heading font-bold" data-lang-en="Kalikata Venkat" data-lang-te="కలికట వెంకట్">
                     Kalikata Venkat
                 </h1>
                 <!-- Subheading - Made responsive -->
-                <p class="text-base md:text-lg lg:text-xl text-gray-600 mb-8">
+                <p class="text-base md:text-lg lg:text-xl text-gray-600 mb-8" data-lang-en="Your Professional & Reliable Plumber in Siddipet" data-lang-te="సిద్దిపేటలో మీ ప్రొఫెషనల్ & నమ్మకమైన ప్లంబర్">
                     Your Professional & Reliable Plumber in Siddipet
                 </p>
                 
@@ -155,21 +172,34 @@
                 <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-2xl mx-auto mb-8">
                     <a href="https://wa.me/919490338810" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-3 px-5 py-3 btn btn-whatsapp font-semibold rounded-lg shadow-md transition-all transform hover:scale-105">
                         <i class="fab fa-whatsapp text-xl"></i>
-                        <span>WhatsApp Me</span>
+                        <span data-lang-en="WhatsApp Me" data-lang-te="నాకు WhatsApp చేయండి">WhatsApp Me</span>
                     </a>
                     <a href="tel:+919490338810" class="flex items-center justify-center gap-3 px-5 py-3 btn btn-call font-semibold rounded-lg shadow-md transition-all transform hover:scale-105">
                         <i class="fas fa-phone-alt text-xl"></i>
-                        <span>Call Me</span>
+                        <span data-lang-en="Call Me" data-lang-te="నాకు కాల్ చేయండి">Call Me</span>
                     </a>
                     <button id="save-contact-btn" class="flex items-center justify-center gap-3 px-5 py-3 btn btn-contact font-semibold rounded-lg shadow-md transition-all transform hover:scale-105">
                         <i class="fas fa-address-card text-xl"></i>
-                        <span>Save Contact</span>
+                        <span data-lang-en="Save Contact" data-lang-te="పరిచయం సేవ్ చేయండి">Save Contact</span>
                     </button>
                     <!-- New QR Code Button -->
                     <button id="qr-code-btn" class="flex items-center justify-center gap-3 px-5 py-3 btn btn-share font-semibold rounded-lg shadow-md transition-all transform hover:scale-105">
                         <i class="fas fa-qrcode text-xl"></i>
-                        <span>Share (QR)</span>
+                        <span data-lang-en="Share (QR)" data-lang-te="షేర్ చేయండి (QR)">Share (QR)</span>
                     </button>
+                </div>
+
+                <!-- Social Media Links -->
+                <div class="flex justify-center items-center gap-6 mt-8">
+                     <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Follow me on Instagram" title="Instagram" class="text-3xl text-gray-500 hover:text-pink-600 transition-colors transform hover:scale-110">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Follow me on Facebook" title="Facebook" class="text-3xl text-gray-500 hover:text-blue-700 transition-colors transform hover:scale-110">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                    <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Watch me on YouTube" title="YouTube" class="text-3xl text-gray-500 hover:text-red-600 transition-colors transform hover:scale-110">
+                        <i class="fab fa-youtube"></i>
+                    </a>
                 </div>
             </div>
         </header>
@@ -178,40 +208,40 @@
         <section id="services" class="py-20" aria-labelledby="services-heading">
             <div class="text-center mb-12">
                 <!-- Heading - Made responsive -->
-                <h2 id="services-heading" class="text-3xl sm:text-4xl md:text-5xl text-gray-900 font-heading font-bold">My Plumbing Services</h2>
-                <p class="text-lg text-gray-600 mt-4">Complete solutions for all your plumbing needs.</p>
+                <h2 id="services-heading" class="text-3xl sm:text-4xl md:text-5xl text-gray-900 font-heading font-bold" data-lang-en="My Plumbing Services" data-lang-te="నా ప్లంబింగ్ సేవలు">My Plumbing Services</h2>
+                <p class="text-lg text-gray-600 mt-4" data-lang-en="Complete solutions for all your plumbing needs." data-lang-te="మీ అన్ని ప్లంబింగ్ అవసరాలకు పూర్తి పరిష్కారాలు.">Complete solutions for all your plumbing needs.</p>
             </div>
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
                 
                 <div class="card-bg p-6 rounded-xl shadow-md text-center flex flex-col items-center">
                     <i class="fas fa-faucet-drip text-4xl accent-color mb-4" aria-hidden="true"></i>
-                    <h3 class="text-2xl text-gray-900 font-heading">Emergency Leak Repair</h3>
-                    <p class="text-sm text-gray-600 mt-2">Available 24/7 for urgent leaks and burst pipes.</p>
+                    <h3 class="text-2xl text-gray-900 font-heading" data-lang-en="Emergency Leak Repair" data-lang-te="అత్యవసర లీక్ మరమ్మతు">Emergency Leak Repair</h3>
+                    <p class="text-sm text-gray-600 mt-2" data-lang-en="Available 24/7 for urgent leaks and burst pipes." data-lang-te="అత్యవసర లీకులు మరియు పగిలిన పైపుల కోసం 24/7 అందుబాటులో ఉంది.">Available 24/7 for urgent leaks and burst pipes.</p>
                 </div>
                 <div class="card-bg p-6 rounded-xl shadow-md text-center flex flex-col items-center">
                     <i class="fas fa-broom text-4xl accent-color mb-4" aria-hidden="true"></i>
-                    <h3 class="text-2xl text-gray-900 font-heading">Drain Cleaning</h3>
-                    <p class="text-sm text-gray-600 mt-2">Fast and effective clearing of clogged drains and sewers.</p>
+                    <h3 class="text-2xl text-gray-900 font-heading" data-lang-en="Drain Cleaning" data-lang-te="డ్రెయిన్ క్లీనింగ్">Drain Cleaning</h3>
+                    <p class="text-sm text-gray-600 mt-2" data-lang-en="Fast and effective clearing of clogged drains and sewers." data-lang-te="మూసుకుపోయిన డ్రైనేజీలు మరియు మురుగు కాలువలను వేగంగా మరియు సమర్థవంతంగా శుభ్రపరచడం.">Fast and effective clearing of clogged drains and sewers.</p>
                 </div>
                 <div class="card-bg p-6 rounded-xl shadow-md text-center flex flex-col items-center">
                     <i class="fas fa-bath text-4xl accent-color mb-4" aria-hidden="true"></i>
-                    <h3 class="text-2xl text-gray-900 font-heading">Fixture Installation</h3>
-                    <p class="text-sm text-gray-600 mt-2">Expert installation of new taps, sinks, showers, and toilets.</p>
+                    <h3 class="text-2xl text-gray-900 font-heading" data-lang-en="Fixture Installation" data-lang-te="ఫిక్చర్ ఇన్‌స్టాలేషన్">Fixture Installation</h3>
+                    <p class="text-sm text-gray-600 mt-2" data-lang-en="Expert installation of new taps, sinks, showers, and toilets." data-lang-te="కొత్త కుళాయిలు, సింక్‌లు, షవర్‌లు మరియు టాయిలెట్‌ల నిపుణుల ఇన్‌స్టాలేషన్.">Expert installation of new taps, sinks, showers, and toilets.</p>
                 </div>
                 <div class="card-bg p-6 rounded-xl shadow-md text-center flex flex-col items-center">
                     <i class="fas fa-temperature-high text-4xl accent-color mb-4" aria-hidden="true"></i>
-                    <h3 class="text-2xl text-gray-900 font-heading">Water Heater Service</h3>
-                    <p class="text-sm text-gray-600 mt-2">Installation and repair for all types of water heaters.</p>
+                    <h3 class="text-2xl text-gray-900 font-heading" data-lang-en="Water Heater Service" data-lang-te="వాటర్ హీటర్ సర్వీస్">Water Heater Service</h3>
+                    <p class="text-sm text-gray-600 mt-2" data-lang-en="Installation and repair for all types of water heaters." data-lang-te="అన్ని రకాల వాటర్ హీటర్ల ఇన్‌స్టాలేషన్ మరియు మరమ్మత్తు.">Installation and repair for all types of water heaters.</p>
                 </div>
                 <div class="card-bg p-6 rounded-xl shadow-md text-center flex flex-col items-center">
                     <i class="fas fa-cogs text-4xl accent-color mb-4" aria-hidden="true"></i>
-                    <h3 class="text-2xl text-gray-900 font-heading">Pipe Fitting & Repair</h3>
-                    <p class="text-sm text-gray-600 mt-2">Reliable pipe repair, replacement, and new installations.</p>
+                    <h3 class="text-2xl text-gray-900 font-heading" data-lang-en="Pipe Fitting & Repair" data-lang-te="పైప్ ఫిట్టింగ్ & మరమ్మతు">Pipe Fitting & Repair</h3>
+                    <p class="text-sm text-gray-600 mt-2" data-lang-en="Reliable pipe repair, replacement, and new installations." data-lang-te="నమ్మకమైన పైపు మరమ్మత్తు, పునఃస్థాపన మరియు కొత్త ఇన్‌స్టాలేషన్లు.">Reliable pipe repair, replacement, and new installations.</p>
                 </div>
                 <div class="card-bg p-6 rounded-xl shadow-md text-center flex flex-col items-center">
                     <i class="fas fa-wrench text-4xl accent-color mb-4" aria-hidden="true"></i>
-                    <h3 class="text-2xl text-gray-900 font-heading">Plumbing Maintenance</h3>
-                    <p class="text-sm text-gray-600 mt-2">Preventative maintenance to keep your plumbing system running smoothly.</p>
+                    <h3 class="text-2xl text-gray-900 font-heading" data-lang-en="Plumbing Maintenance" data-lang-te="ప్లంబింగ్ నిర్వహణ">Plumbing Maintenance</h3>
+                    <p class="text-sm text-gray-600 mt-2" data-lang-en="Preventative maintenance to keep your plumbing system running smoothly." data-lang-te="మీ ప్లంబింగ్ వ్యవస్థ సజావుగా సాగడానికి నివారణ నిర్వహణ.">Preventative maintenance to keep your plumbing system running smoothly.</p>
                 </div>
             </div>
         </section>
@@ -222,16 +252,16 @@
                 <div class="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
                     <div class="order-2 md:order-1">
                         <!-- Heading - Made responsive -->
-                        <h2 id="about-me-heading" class="text-3xl sm:text-4xl md:text-5xl mb-6 text-gray-900 font-heading font-bold">About Me</h2>
-                        <p class="text-md md:text-lg text-gray-700 leading-relaxed mb-4">
+                        <h2 id="about-me-heading" class="text-3xl sm:text-4xl md:text-5xl mb-6 text-gray-900 font-heading font-bold" data-lang-en="About Me" data-lang-te="నా గురించి">About Me</h2>
+                        <p class="text-md md:text-lg text-gray-700 leading-relaxed mb-4" data-lang-en="Hello! I'm <strong>Kalikata Venkat</strong>, your local plumber based right here in Siddipet." data-lang-te="నమస్కారం! నేను <strong>కలికట వెంకట్</strong>, సిద్దిపేటలోని మీ స్థానిక ప్లంబర్‌ను.">
                             Hello! I'm <strong>Kalikata Venkat</strong>, your local plumber based right here in Siddipet.
                         </p>
-                        <p class="text-md text-gray-700 leading-relaxed mb-4">
+                        <p class="text-md text-gray-700 leading-relaxed mb-4" data-lang-en="With over <strong>10+ years of hands-on experience</strong>, I've handled everything from small leaks to large-scale plumbing installations. I take pride in providing honest, reliable, and affordable service to my community." data-lang-te="<strong>10+ సంవత్సరాల అనుభవంతో</strong>, నేను చిన్న లీక్‌ల నుండి పెద్ద ప్లంబింగ్ ఇన్‌స్టాలేషన్‌ల వరకు ప్రతిదీ నిర్వహించాను. నా సంఘానికి నిజాయితీ, నమ్మకమైన మరియు సరసమైన సేవను అందించడంలో నేను గర్వపడుతున్నాను.">
                             With over <strong>10+ years of hands-on experience</strong>, I've handled everything from small leaks to large-scale plumbing installations. I take pride in providing honest, reliable, and affordable service to my community.
                         </p>
-                        <p class="text-md text-gray-700 leading-relaxed">
+                        <p class="text-md text-gray-700 leading-relaxed" data-lang-en="My goal is to solve your plumbing problems quickly and efficiently, ensuring high-quality work that lasts. When you call me, you get me – not a subcontractor." data-lang-te="మీ ప్లంబింగ్ సమస్యలను త్వరగా మరియు సమర్ధవంతంగా పరిష్కరించడమే నా లక్ష్యం, దీర్ఘకాలం మన్నే నాణ్యమైన పనిని నిర్ధారిస్తుంది. మీరు నాకు కాల్ చేసినప్పుడు, మీతో మాట్లాడేది నేనే – సబ్ కాంట్రాక్టర్ కాదు.">
                            My goal is to solve your plumbing problems quickly and efficiently, ensuring high-quality work that lasts. When you call me, you get me – not a subcontractor.
-                        </bodyp>
+                        </p>
                     </div>
                     <div class="order-1 md:order-2">
                         <!-- User can replace this image -->
@@ -239,22 +269,22 @@
                     </div>
                 </div>
                 <div class="mt-12 border-t border-gray-200 pt-8">
-                    <h3 class="text-2xl font-heading font-bold text-gray-900 mb-4">My Details</h3>
+                    <h3 class="text-2xl font-heading font-bold text-gray-900 mb-4" data-lang-en="My Details" data-lang-te="నా వివరాలు">My Details</h3>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <div>
-                            <strong class="text-gray-900">Name:</strong>
+                            <strong class="text-gray-900" data-lang-en="Name:" data-lang-te="పేరు:">Name:</strong>
                             <p class="text-gray-700">Kalikata Venkat</p>
                         </div>
                         <div>
-                            <strong class="text-gray-900">Experience:</strong>
+                            <strong class="text-gray-900" data-lang-en="Experience:" data-lang-te="అనుభవం:">Experience:</strong>
                             <p class="text-gray-700">10+ Years</p>
                         </div>
                         <div>
-                            <strong class="text-gray-900">Phone:</strong>
+                            <strong class="text-gray-900" data-lang-en="Phone:" data-lang-te="ఫోన్:">Phone:</strong>
                             <p class="text-gray-700"><a href="tel:+919490338810" class="hover:underline accent-color">+91 94903 38810</a></p>
                         </div>
                         <div>
-                            <strong class="text-gray-900">Location:</strong>
+                            <strong class="text-gray-900" data-lang-en="Location:" data-lang-te="స్థలం:">Location:</strong>
                             <p class="text-gray-700">Siddipet, Telangana, 502103</p>
                         </div>
                     </div>
@@ -267,7 +297,7 @@
     <!-- Footer -->
     <footer class="bg-gray-100 border-t border-gray-200 mt-20">
         <div class="container mx-auto px-6 lg:px-8 py-8 text-center text-gray-600">
-            <p class="text-sm">&copy; 2025 Kalikata Venkat. All Rights Reserved.</p>
+            <p class="text-sm" data-lang-en="&copy; 2025 Kalikata Venkat. All Rights Reserved." data-lang-te="&copy; 2025 కలికట వెంకట్. అన్ని హక్కులు ప్రత్యేకించబడినవి.">&copy; 2025 Kalikata Venkat. All Rights Reserved.</p>
         </div>
     </footer>
 
@@ -275,9 +305,9 @@
     <div id="qr-modal">
         <div id="qr-modal-content">
             <span id="qr-close-btn" role="button" aria-label="Close modal">&times;</span>
-            <h3 class="text-lg font-medium text-gray-900 mb-4">Scan to Share My Profile</h3>
+            <h3 class="text-lg font-medium text-gray-900 mb-4" data-lang-en="Scan to Share My Profile" data-lang-te="నా ప్రొఫైల్‌ను షేర్ చేయడానికి స్కాన్ చేయండి">Scan to Share My Profile</h3>
             <canvas id="qr-canvas"></canvas>
-            <p class="text-sm text-gray-600 mt-4">Scan this code to visit this page on another device.</p>
+            <p class="text-sm text-gray-600 mt-4" data-lang-en="Scan this code to visit this page on another device." data-lang-te="మరొక పరికరంలో ఈ పేజీని సందర్శించడానికి ఈ కోడ్‌ను స్కాన్ చేయండి.">Scan this code to visit this page on another device.</p>
         </div>
     </div>
 
@@ -301,6 +331,37 @@
                     }
                 });
             });
+
+            // --- Language Translation Logic ---
+            const langEnButton = document.getElementById('lang-en');
+            const langTeButton = document.getElementById('lang-te');
+            const translatableElements = document.querySelectorAll('[data-lang-en]');
+            const htmlEl = document.documentElement;
+
+            const setLanguage = (langKey) => {
+                const lang = langKey === 'langTe' ? 'te' : 'en-IN';
+                htmlEl.setAttribute('lang', lang);
+
+                translatableElements.forEach(el => {
+                    el.innerHTML = el.dataset[langKey];
+                });
+
+                if (langKey === 'langTe') {
+                    langTeButton.classList.add('active-lang');
+                    langEnButton.classList.remove('active-lang');
+                } else {
+                    langEnButton.classList.add('active-lang');
+                    langTeButton.classList.remove('active-lang');
+                }
+                
+                localStorage.setItem('preferredLanguage', langKey);
+            };
+
+            langEnButton.addEventListener('click', () => setLanguage('langEn'));
+            langTeButton.addEventListener('click', () => setLanguage('langTe'));
+            
+            const savedLang = localStorage.getItem('preferredLanguage') || 'langEn';
+            setLanguage(savedLang); // Apply on load
 
             // --- Save Contact (VCF) Logic ---
             const saveContactBtn = document.getElementById('save-contact-btn');
