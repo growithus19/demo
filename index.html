@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<!-- Set the primary language of the page -->
+<html lang="en-IN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Primary Title and Description for Kalikata Venkat -->
+    <title>Kalikata Venkat | Expert Plumber in Siddipet</title>
+    <meta name="description" content="Kalikata Venkat offers fast, reliable plumbing services in Siddipet. 10+ years of experience in leak repair, installation, and emergency service.">
+    
+    <!-- Favicon (User can replace 'mk logo black.png' with a personal photo or logo) -->
+    <link rel="icon" href="mk logo black.png" type="image/png">
+
+    <!-- Fonts and CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto+Slab:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <!-- QR Code Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrious/4.0.2/qrious.min.js"></script>
+
+    <style>
+        html { scroll-behavior: smooth; }
+        body { 
+            font-family: 'Poppins', sans-serif; 
+            background-color: #FFFFFF;
+            color: #1F2937; /* Dark Gray */
+            overflow-x: hidden;
+        }
+        .font-heading { font-family: 'Roboto Slab', serif; }
+        .accent-color { color: #2563EB; } /* Blue */
+        .card-bg { 
+            background-color: #F9FAFB; /* Very light gray */
+            border: 1px solid #E5E7EB; /* Lighter gray border */
+        }
+        .btn {
+            transition: all 0.3s ease;
+        }
+        .btn-whatsapp {
+            background-color: #25D366; color: white;
+        }
+        .btn-whatsapp:hover {
+            background-color: #1DAE56;
+        }
+        .btn-call {
+            background-color: #2563EB; color: white;
+        }
+        .btn-call:hover {
+            background-color: #1D4ED8;
+        }
+        .btn-contact {
+            background-color: #4B5563; color: white;
+        }
+        .btn-contact:hover {
+            background-color: #374151;
+        }
+        .btn-share {
+            background-color: #0ea5e9; /* Sky Blue */
+            color: white;
+        }
+        .btn-share:hover {
+            background-color: #0284c7; /* Darker Sky Blue */
+        }
+        
+        /* QR Code Modal Styles */
+        #qr-modal {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+            display: none; /* Hidden by default */
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+        #qr-modal-content {
+            background-color: white;
+            padding: 2rem;
+            padding-top: 2.5rem; /* More space for close button */
+            border-radius: 0.5rem;
+            text-align: center;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            position: relative;
+        }
+        #qr-close-btn {
+            position: absolute;
+            top: 0.5rem;
+            right: 0.5rem;
+            font-size: 1.5rem;
+            color: #9CA3AF; /* gray-400 */
+            cursor: pointer;
+            line-height: 1;
+            padding: 0.5rem;
+        }
+        #qr-close-btn:hover {
+            color: #1F2937; /* gray-800 */
+        }
+        #qr-canvas {
+            width: 256px !important;
+            height: 256px !important;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Navigation Bar -->
+    <nav class="bg-white shadow-sm sticky top-0 z-50 border-b border-gray-200" aria-label="Main Navigation">
+        <div class="container mx-auto px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <a href="#home" class="text-3xl accent-color font-heading font-bold">Kalikata Venkat</a>
+                
+                <div class="hidden md:flex items-center space-x-6">
+                    <a href="#home" class="text-gray-700 hover:text-blue-600 transition-colors">Home</a>
+                    <a href="#services" class="text-gray-700 hover:text-blue-600 transition-colors">Services</a>
+                    <a href="#about" class="text-gray-700 hover:text-blue-600 transition-colors">About Me</a>
+                </div>
+
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-gray-700 hover:text-blue-600 focus:outline-none" aria-label="Open menu">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg">
+            <a href="#home" class="block py-3 px-6 text-sm text-gray-700 hover:bg-gray-100">Home</a>
+            <a href="#services" class="block py-3 px-6 text-sm text-gray-700 hover:bg-gray-100">Services</a>
+            <a href="#about" class="block py-3 px-6 text-sm text-gray-700 hover:bg-gray-100">About Me</a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-6 lg:px-8">
+
+        <!-- Hero Section -->
+        <header id="home" class="flex flex-col items-center justify-center min-h-[90vh] text-center pt-20 pb-10">
+            <div class="w-full max-w-4xl mx-auto p-6 md:p-12">
+                <div class="mb-6">
+                    <!-- Placeholder for profile picture. User should replace 'mk logo black.png' -->
+                    <img src="logo.jpg" alt="Kalikata Venkat - Plumber" class="mx-auto h-32 w-32 md:h-40 md:w-40 rounded-full object-cover border-4 border-blue-500 shadow-lg">
+                </div>
+                
+                <!-- Main Heading (H1) - Made responsive -->
+                <h1 class="text-4xl sm:text-5xl md:text-6xl text-gray-900 mb-4 font-heading font-bold">
+                    Kalikata Venkat
+                </h1>
+                <!-- Subheading - Made responsive -->
+                <p class="text-base md:text-lg lg:text-xl text-gray-600 mb-8">
+                    Your Professional & Reliable Plumber in Siddipet
+                </p>
+                
+                <!-- Button Grid - Made responsive for 4 buttons -->
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-2xl mx-auto mb-8">
+                    <a href="https://wa.me/919490338810" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-3 px-5 py-3 btn btn-whatsapp font-semibold rounded-lg shadow-md transition-all transform hover:scale-105">
+                        <i class="fab fa-whatsapp text-xl"></i>
+                        <span>WhatsApp Me</span>
+                    </a>
+                    <a href="tel:+919490338810" class="flex items-center justify-center gap-3 px-5 py-3 btn btn-call font-semibold rounded-lg shadow-md transition-all transform hover:scale-105">
+                        <i class="fas fa-phone-alt text-xl"></i>
+                        <span>Call Me</span>
+                    </a>
+                    <button id="save-contact-btn" class="flex items-center justify-center gap-3 px-5 py-3 btn btn-contact font-semibold rounded-lg shadow-md transition-all transform hover:scale-105">
+                        <i class="fas fa-address-card text-xl"></i>
+                        <span>Save Contact</span>
+                    </button>
+                    <!-- New QR Code Button -->
+                    <button id="qr-code-btn" class="flex items-center justify-center gap-3 px-5 py-3 btn btn-share font-semibold rounded-lg shadow-md transition-all transform hover:scale-105">
+                        <i class="fas fa-qrcode text-xl"></i>
+                        <span>Share (QR)</span>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Services Section -->
+        <section id="services" class="py-20" aria-labelledby="services-heading">
+            <div class="text-center mb-12">
+                <!-- Heading - Made responsive -->
+                <h2 id="services-heading" class="text-3xl sm:text-4xl md:text-5xl text-gray-900 font-heading font-bold">My Plumbing Services</h2>
+                <p class="text-lg text-gray-600 mt-4">Complete solutions for all your plumbing needs.</p>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                
+                <div class="card-bg p-6 rounded-xl shadow-md text-center flex flex-col items-center">
+                    <i class="fas fa-faucet-drip text-4xl accent-color mb-4" aria-hidden="true"></i>
+                    <h3 class="text-2xl text-gray-900 font-heading">Emergency Leak Repair</h3>
+                    <p class="text-sm text-gray-600 mt-2">Available 24/7 for urgent leaks and burst pipes.</p>
+                </div>
+                <div class="card-bg p-6 rounded-xl shadow-md text-center flex flex-col items-center">
+                    <i class="fas fa-broom text-4xl accent-color mb-4" aria-hidden="true"></i>
+                    <h3 class="text-2xl text-gray-900 font-heading">Drain Cleaning</h3>
+                    <p class="text-sm text-gray-600 mt-2">Fast and effective clearing of clogged drains and sewers.</p>
+                </div>
+                <div class="card-bg p-6 rounded-xl shadow-md text-center flex flex-col items-center">
+                    <i class="fas fa-bath text-4xl accent-color mb-4" aria-hidden="true"></i>
+                    <h3 class="text-2xl text-gray-900 font-heading">Fixture Installation</h3>
+                    <p class="text-sm text-gray-600 mt-2">Expert installation of new taps, sinks, showers, and toilets.</p>
+                </div>
+                <div class="card-bg p-6 rounded-xl shadow-md text-center flex flex-col items-center">
+                    <i class="fas fa-temperature-high text-4xl accent-color mb-4" aria-hidden="true"></i>
+                    <h3 class="text-2xl text-gray-900 font-heading">Water Heater Service</h3>
+                    <p class="text-sm text-gray-600 mt-2">Installation and repair for all types of water heaters.</p>
+                </div>
+                <div class="card-bg p-6 rounded-xl shadow-md text-center flex flex-col items-center">
+                    <i class="fas fa-cogs text-4xl accent-color mb-4" aria-hidden="true"></i>
+                    <h3 class="text-2xl text-gray-900 font-heading">Pipe Fitting & Repair</h3>
+                    <p class="text-sm text-gray-600 mt-2">Reliable pipe repair, replacement, and new installations.</p>
+                </div>
+                <div class="card-bg p-6 rounded-xl shadow-md text-center flex flex-col items-center">
+                    <i class="fas fa-wrench text-4xl accent-color mb-4" aria-hidden="true"></i>
+                    <h3 class="text-2xl text-gray-900 font-heading">Plumbing Maintenance</h3>
+                    <p class="text-sm text-gray-600 mt-2">Preventative maintenance to keep your plumbing system running smoothly.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="py-20" aria-labelledby="about-me-heading">
+            <div class="max-w-5xl mx-auto card-bg p-8 md:p-12 rounded-2xl shadow-lg overflow-hidden">
+                <div class="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
+                    <div class="order-2 md:order-1">
+                        <!-- Heading - Made responsive -->
+                        <h2 id="about-me-heading" class="text-3xl sm:text-4xl md:text-5xl mb-6 text-gray-900 font-heading font-bold">About Me</h2>
+                        <p class="text-md md:text-lg text-gray-700 leading-relaxed mb-4">
+                            Hello! I'm <strong>Kalikata Venkat</strong>, your local plumber based right here in Siddipet.
+                        </p>
+                        <p class="text-md text-gray-700 leading-relaxed mb-4">
+                            With over <strong>10+ years of hands-on experience</strong>, I've handled everything from small leaks to large-scale plumbing installations. I take pride in providing honest, reliable, and affordable service to my community.
+                        </p>
+                        <p class="text-md text-gray-700 leading-relaxed">
+                           My goal is to solve your plumbing problems quickly and efficiently, ensuring high-quality work that lasts. When you call me, you get me – not a subcontractor.
+                        </bodyp>
+                    </div>
+                    <div class="order-1 md:order-2">
+                        <!-- User can replace this image -->
+                        <img src="https://placehold.co/600x400/E0E7FF/3B82F6?text=Working+on+Pipes" alt="Kalikata Venkat at work" class="rounded-lg shadow-md w-full h-auto">
+                    </div>
+                </div>
+                <div class="mt-12 border-t border-gray-200 pt-8">
+                    <h3 class="text-2xl font-heading font-bold text-gray-900 mb-4">My Details</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <strong class="text-gray-900">Name:</strong>
+                            <p class="text-gray-700">Kalikata Venkat</p>
+                        </div>
+                        <div>
+                            <strong class="text-gray-900">Experience:</strong>
+                            <p class="text-gray-700">10+ Years</p>
+                        </div>
+                        <div>
+                            <strong class="text-gray-900">Phone:</strong>
+                            <p class="text-gray-700"><a href="tel:+919490338810" class="hover:underline accent-color">+91 94903 38810</a></p>
+                        </div>
+                        <div>
+                            <strong class="text-gray-900">Location:</strong>
+                            <p class="text-gray-700">Siddipet, Telangana, 502103</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-100 border-t border-gray-200 mt-20">
+        <div class="container mx-auto px-6 lg:px-8 py-8 text-center text-gray-600">
+            <p class="text-sm">&copy; 2025 Kalikata Venkat. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- QR Code Modal HTML -->
+    <div id="qr-modal">
+        <div id="qr-modal-content">
+            <span id="qr-close-btn" role="button" aria-label="Close modal">&times;</span>
+            <h3 class="text-lg font-medium text-gray-900 mb-4">Scan to Share My Profile</h3>
+            <canvas id="qr-canvas"></canvas>
+            <p class="text-sm text-gray-600 mt-4">Scan this code to visit this page on another device.</p>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // --- Mobile Menu Logic ---
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const navLinks = document.querySelectorAll('#mobile-menu a, nav a[href^="#"]');
+
+            const toggleMenu = () => {
+                mobileMenu.classList.toggle('hidden');
+            };
+
+            mobileMenuButton.addEventListener('click', toggleMenu);
+
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        toggleMenu();
+                    }
+                });
+            });
+
+            // --- Save Contact (VCF) Logic ---
+            const saveContactBtn = document.getElementById('save-contact-btn');
+            saveContactBtn.addEventListener('click', () => {
+                const vcard = `BEGIN:VCARD
+VERSION:3.0
+FN:Kalikata Venkat (Plumber)
+ORG:Kalikata Venkat - Plumbing Services
+TEL;TYPE=WORK,VOICE:+919490338810
+TEL;TYPE=WORK,VOICE:+919490338810
+EMAIL:kalikatavenkat.plumber@gmail.com
+ADR;TYPE=WORK:;;;Siddipet;Telangana;502103;India
+NOTE:Reliable Plumber in Siddipet
+END:VCARD`;
+                
+                const blob = new Blob([vcard], { type: 'text/vcard;charset=utf-8' });
+                const url = URL.createObjectURL(blob);
+                
+                const link = document.createElement('a');
+                link.href = url;
+                link.download = 'Kalikata_Venkat_Plumber.vcf';
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+                URL.revokeObjectURL(url);
+            });
+
+            // --- QR Code Modal Logic ---
+            const qrModal = document.getElementById('qr-modal');
+            const qrCodeBtn = document.getElementById('qr-code-btn');
+            const qrCloseBtn = document.getElementById('qr-close-btn');
+            const qrCanvas = document.getElementById('qr-canvas');
+
+            qrCodeBtn.addEventListener('click', () => {
+                // Generate QR code
+                new QRious({
+                    element: qrCanvas,
+                    value: window.location.href,
+                    size: 256,
+                    padding: 16 // Adds some white space
+                });
+                // Show modal
+                qrModal.style.display = 'flex';
+            });
+
+            const closeModal = () => {
+                qrModal.style.display = 'none';
+            };
+
+            qrCloseBtn.addEventListener('click', closeModal);
+            
+            // Close modal when clicking on the background overlay
+            qrModal.addEventListener('click', (event) => {
+                if (event.target === qrModal) {
+                    closeModal();
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
+
